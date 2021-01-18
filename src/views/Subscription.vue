@@ -7,6 +7,9 @@
 <script>
 export default {
   name: "Subscription",
+  title() {
+    return "Inscripciones";
+  },
 };
 </script>
 
