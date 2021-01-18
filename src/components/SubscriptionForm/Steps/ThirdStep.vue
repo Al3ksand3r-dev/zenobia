@@ -7,12 +7,12 @@
       <select
         id="SocialMedia"
         class="text-select"
-        v-model="form.selected"
-        v-if="form.selected !== 'Otro'"
+        v-model="form.socialMedia"
+        v-if="form.socialMedia !== 'Otro'"
       >
         <option
           class="text-select item"
-          v-for="(socialMedia, idx) in socialMedia"
+          v-for="(socialMedia, idx) in socialMediaList"
           :key="idx"
           :value="socialMedia"
         >
@@ -44,9 +44,9 @@ export default {
     return {
       form: {
         other: "",
-        selected: "",
+        socialMedia: "",
       },
-      socialMedia: [
+      socialMediaList: [
         "Página web de la Fundación",
         "Facebook",
         "Twitter",
@@ -61,7 +61,7 @@ export default {
   },
   validations: {
     form: {
-      selected: {
+      socialMedia: {
         required,
       },
     },

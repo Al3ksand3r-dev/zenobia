@@ -1,5 +1,20 @@
 <template>
   <div>
+    <div class="row">
+      <div class="col direction-col">
+        <label for="Courses" class="label">Cursos libres</label>
+        <select id="Courses" class="text-select" v-model="form.course">
+          <option
+            class="text-select item"
+            v-for="(course, idx) in courses"
+            :key="idx"
+            :value="course"
+          >
+            {{ course }}
+          </option>
+        </select>
+      </div>
+    </div>
     <div class="row direction-row">
       <div class="col direction-col">
         <label for="Firstname" class="label">Nombre</label>
@@ -90,8 +105,8 @@
         <select
           id="Etnicity"
           class="text-select"
-          v-model="form.selected"
-          v-if="form.selected !== 'Otras'"
+          v-model="form.etnicity"
+          v-if="form.etnicity !== 'Otras'"
         >
           <option
             class="text-select item"
@@ -134,14 +149,28 @@ export default {
         origin: "",
         state: "",
         citizenship: "",
-        selected: "",
+        etnicity: "",
+        course: "",
         other: "",
       },
       etnicities: ["Indígena", "Raizal", "Mestizo", "Negro", "Otras"],
+      courses: [
+        "Piano",
+        "Guitarra",
+        "Percusión",
+        "Lectura",
+        "Escritura",
+        "Danza",
+        "Flauta",
+        "Aprestamiento musical",
+      ],
     };
   },
   validations: {
     form: {
+      course: {
+        required,
+      },
       firstName: {
         required,
       },
@@ -160,7 +189,7 @@ export default {
       citizenship: {
         required,
       },
-      selected: {
+      etnicity: {
         required,
       },
     },
