@@ -95,7 +95,7 @@
         >
           <option
             class="text-select item"
-            v-for="(etnicity, idx) in form.etnicities"
+            v-for="(etnicity, idx) in etnicities"
             :key="idx"
             :value="etnicity"
           >
@@ -136,8 +136,8 @@ export default {
         citizenship: "",
         selected: "",
         other: "",
-        etnicities: ["Indígena", "Raizal", "Mestizo", "Negro", "Otras"],
       },
+      etnicities: ["Indígena", "Raizal", "Mestizo", "Negro", "Otras"],
     };
   },
   validations: {

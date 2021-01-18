@@ -12,7 +12,7 @@
       >
         <option
           class="text-select item"
-          v-for="(socialMedia, idx) in form.socialMedia"
+          v-for="(socialMedia, idx) in socialMedia"
           :key="idx"
           :value="socialMedia"
         >
@@ -45,18 +45,18 @@ export default {
       form: {
         other: "",
         selected: "",
-        socialMedia: [
-          "Página web de la Fundación",
-          "Facebook",
-          "Twitter",
-          "Correo electrónico",
-          "Radio",
-          "Me conto un amigo",
-          "Volante",
-          "Whatsapp",
-          "Otro",
-        ],
       },
+      socialMedia: [
+        "Página web de la Fundación",
+        "Facebook",
+        "Twitter",
+        "Correo electrónico",
+        "Radio",
+        "Me conto un amigo",
+        "Volante",
+        "Whatsapp",
+        "Otro",
+      ],
     };
   },
   validations: {

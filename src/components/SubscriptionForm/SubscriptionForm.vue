@@ -5,6 +5,7 @@
     @active-step="isStepActive"
     @stepper-finished="completeWizard"
     locale="es"
+    ref="formWizard"
   >
   </horizontal-stepper>
 </template>
@@ -64,11 +65,22 @@ export default {
       });
     };
 
-    const completeWizard = (payload) => {
-      console.log(payload);
+    const input = ref({});
+    const formWizard = ref([]);
+
+    const completeWizard = () => {
+      const formValues = formWizard.value.$children.map((child) => child.form);
+      input.value = Object.assign(...formValues);
+      console.log(input.value);
     };
 
-    return { demoSteps, completeStep, isStepActive, completeWizard };
+    return {
+      demoSteps,
+      completeStep,
+      isStepActive,
+      completeWizard,
+      formWizard,
+    };
   },
 };
 </script>
