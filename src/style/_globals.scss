@@ -58,6 +58,7 @@
   }
 }
 
+// layout styles
 .direction-col {
   flex-direction: column;
 }
@@ -66,10 +67,17 @@
   flex-direction: row;
 }
 
+// size styles
+
 .mr-10 {
   margin: 0 10px 0;
 }
 
 .ml-10 {
   margin: 0 0 0 10px;
+}
+
+// text styles
+.uppercase {
+  text-transform: uppercase;
 }

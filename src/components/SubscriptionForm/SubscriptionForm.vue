@@ -3,7 +3,8 @@
     :steps="demoSteps"
     @completed-step="completeStep"
     @active-step="isStepActive"
-    @stepper-finished="alert"
+    @stepper-finished="completeWizard"
+    locale="es"
   >
   </horizontal-stepper>
 </template>
@@ -12,6 +13,7 @@
 import HorizontalStepper from "vue-stepper";
 import FirstStep from "./Steps/FirstStep.vue";
 import SecondStep from "./Steps/SecondStep.vue";
+import ThirdStep from "./Steps/ThirdStep.vue";
 import { ref } from "@vue/composition-api";
 export default {
   components: { HorizontalStepper },
@@ -29,9 +31,17 @@ export default {
       {
         icon: "person",
         name: "second",
-        title: "Datos personales",
+        title: "Informacíon",
         subtitle: "",
         component: SecondStep,
+        completed: false,
+      },
+      {
+        icon: "person",
+        name: "third",
+        title: "Informacíon",
+        subtitle: "Comente por qué medio se enteró del proyecto",
+        component: ThirdStep,
         completed: false,
       },
     ]);
@@ -54,11 +64,11 @@ export default {
       });
     };
 
-    const alert = () => {
-      alert("end");
+    const completeWizard = (payload) => {
+      console.log(payload);
     };
 
-    return { demoSteps, completeStep, isStepActive, alert };
+    return { demoSteps, completeStep, isStepActive, completeWizard };
   },
 };
 </script>

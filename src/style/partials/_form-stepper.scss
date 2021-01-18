@@ -7,6 +7,8 @@
     background: #289ea8 !important;
   }
 
+  // end of stepper global styles
+
   .content {
     margin: 20px auto !important;
 
@@ -25,11 +27,15 @@
 
         .label {
           padding: 0 0 5px;
+          font-size: 14px;
           display: inline-block;
+          word-wrap: none;
         }
 
         .text-field {
           outline: none;
+          font-size: 16px;
+          color: #333;
           padding: 13px 8px;
           border-radius: 5px;
           border: 1px solid #ccc;
@@ -62,6 +68,13 @@
               background: #eee;
             }
           }
+        }
+
+        .text-area {
+          @extend .text-field;
+          height: 150px;
+          resize: vertical;
+          font-family: "Roboto", sans-serif;
         }
       }
     }

@@ -105,7 +105,8 @@ export default {
 
     a {
       &.exact-active {
-        color: #f7c800;
+        color: #289ea8;
+        font-weight: bold;
       }
     }
   }
@@ -179,7 +180,7 @@ ul {
       position: absolute;
       visibility: hidden;
       transform: scaleX(0);
-      background: #f7c800;
+      background: #289ea8;
     }
 
     &:hover {

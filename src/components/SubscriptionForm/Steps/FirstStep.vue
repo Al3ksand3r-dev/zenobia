@@ -49,7 +49,7 @@
         <label class="label" for="Date">Fecha de nacimiento</label>
         <input
           v-model="form.dateOfBirth"
-          class="text-date"
+          class="text-date uppercase"
           type="date"
           name="Date"
           id="Date"

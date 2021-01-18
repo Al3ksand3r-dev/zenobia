@@ -2,116 +2,77 @@
   <div>
     <div class="row direction-row">
       <div class="col direction-col">
-        <label for="Firstname" class="label">Nombre</label>
-        <input
-          class="text-field"
-          type="text"
-          id="Firstname"
-          v-model="form.firstName"
-        />
-      </div>
-      <div class="col direction-col">
-        <label for="Lastname" class="label">Apellido</label>
-        <input
-          class="text-field"
-          type="text"
-          id="Lastname"
-          v-model="form.lastName"
-        />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col direction-row">
-        <label for="Female" class="label">
-          Femenino
-          <input
-            class="text-radio"
-            type="radio"
-            id="Female"
-            value="Femenino"
-            v-model="form.gender"
-          />
-        </label>
-        <label for="Male" class="label ml-10">
-          Masculino
-          <input
-            class="text-radio"
-            type="radio"
-            id="Male"
-            value="Masculino"
-            v-model="form.gender"
-          />
-        </label>
+        <label for="HeardFrom" class="label"
+          >Comente por qué decide tomar el curso</label
+        >
+        <textarea
+          class="text-area"
+          id="HeardFrom"
+          v-model="form.heardFrom"
+        ></textarea>
       </div>
     </div>
     <div class="row">
       <div class="col direction-col">
-        <label class="label" for="Date">Fecha de nacimiento</label>
+        <label class="label" for="HealthCare"
+          >Entidad prestadora de salud o Sisben</label
+        >
         <input
-          v-model="form.dateOfBirth"
-          class="text-date"
-          type="date"
-          name="Date"
-          id="Date"
-        />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col direction-col">
-        <label for="Origin" class="label">Lugar de nacimiento</label>
-        <input
+          v-model="form.healthCare"
           class="text-field"
-          v-model="form.origin"
           type="text"
-          id="Origin"
+          id="HealthCare"
         />
       </div>
     </div>
     <div class="row direction-row">
       <div class="col direction-col">
-        <label for="State" class="label">Departamento</label>
-        <input class="text-field" v-model="form.state" type="text" id="State" />
-      </div>
-      <div class="col direction-col">
-        <label for="Citizenship" class="label">Nacionalidad</label>
+        <label for="State" class="label">Nombre del colegio</label>
         <input
           class="text-field"
-          v-model="form.citizenship"
+          v-model="form.school"
           type="text"
-          id="Citizenship"
+          id="State"
+        />
+      </div>
+      <div class="col direction-col">
+        <label for="Grade" class="label">Grado que cursa</label>
+        <input class="text-field" v-model="form.grade" type="text" id="Grade" />
+      </div>
+    </div>
+    <div class="row direction-row">
+      <div class="col direction-col">
+        <label for="Parent" class="label">Nombre del adulto responsable</label>
+        <input
+          class="text-field"
+          v-model="form.parent"
+          type="text"
+          id="Parent"
+        />
+      </div>
+      <div class="col direction-col">
+        <label for="Activity" class="label">Actividad</label>
+        <input
+          class="text-field"
+          v-model="form.activity"
+          type="text"
+          id="Activity"
         />
       </div>
     </div>
-    <div class="row">
+    <div class="row direction-row">
       <div class="col direction-col">
-        <label for="Etnicity" class="label"
-          >Grupo étnico al que pertenece</label
-        >
-        <select
-          id="Etnicity"
-          class="text-select"
-          v-model="form.selected"
-          v-if="form.selected !== 'Otras'"
-        >
-          <option
-            class="text-select item"
-            v-for="(etnicity, idx) in form.etnicities"
-            :key="idx"
-            :value="etnicity"
-          >
-            {{ etnicity }}
-          </option>
-        </select>
-        <div class="col" v-else>
-          <label for="Other" class="label">
-            <input
-              type="text"
-              id="Other"
-              class="text-field highlight"
-              v-model="form.other"
-            />
-          </label>
-        </div>
+        <label for="Phone" class="label">Teléfono de contacto</label>
+        <input class="text-field" v-model="form.phone" type="text" id="Phone" />
+      </div>
+      <div class="col direction-col">
+        <label for="Address" class="label">Dirección de residencia</label>
+        <input
+          class="text-field"
+          v-model="form.address"
+          type="text"
+          id="Address"
+        />
       </div>
     </div>
   </div>
@@ -121,46 +82,44 @@
 import { validationMixin } from "vuelidate";
 import { required } from "vuelidate/lib/validators";
 export default {
-  name: "FirstStep",
+  name: "SecondStep",
   props: ["clickedNext", "currentStep"],
   mixins: [validationMixin],
   data() {
     return {
       form: {
-        firstName: "",
-        lastName: "",
-        gender: "Femenino",
-        dateOfBirth: "",
-        origin: "",
-        state: "",
-        citizenship: "",
-        selected: "",
-        other: "",
-        etnicities: ["Indígena", "Raizal", "Mestizo", "Negro", "Otras"],
+        heardFrom: "",
+        healthCare: "",
+        school: "",
+        grade: "",
+        parent: "",
+        activity: "",
+        phone: "",
+        address: "",
       },
     };
   },
   validations: {
     form: {
-      firstName: {
+      healthCare: {
         required,
       },
-      lastName: {
+      school: {
         required,
       },
-      dateOfBirth: {
+      grade: {
         required,
       },
-      origin: {
+      parent: {
         required,
       },
-      state: {
+      activity: {
         required,
       },
-      citizenship: {
+      phone: {
         required,
       },
-      selected: {
+      address: {
         required,
       },
     },
