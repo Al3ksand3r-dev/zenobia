@@ -2,9 +2,13 @@
   margin: 2rem 0;
   box-shadow: none !important;
 
+  // Form stepper global styles
+  .circle .material-icons {
+    background: #289ea8 !important;
+  }
+
   .content {
     margin: 20px auto !important;
-    max-width: 768px;
 
     .row {
       margin: 20px 0;
@@ -67,6 +71,5 @@
     margin: auto;
     padding: 0 !important;
     border: none !important;
-    max-width: 768px !important;
   }
 }

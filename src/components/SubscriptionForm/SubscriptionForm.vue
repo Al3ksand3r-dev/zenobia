@@ -11,6 +11,7 @@
 <script>
 import HorizontalStepper from "vue-stepper";
 import FirstStep from "./Steps/FirstStep.vue";
+import SecondStep from "./Steps/SecondStep.vue";
 import { ref } from "@vue/composition-api";
 export default {
   components: { HorizontalStepper },
@@ -23,6 +24,14 @@ export default {
         title: "Datos personales",
         subtitle: "",
         component: FirstStep,
+        completed: false,
+      },
+      {
+        icon: "person",
+        name: "second",
+        title: "Datos personales",
+        subtitle: "",
+        component: SecondStep,
         completed: false,
       },
     ]);

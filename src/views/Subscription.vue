@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-    <h1 class="container__title">Formulario de inscripción</h1>
-    <subscription-form />
+    <div class="container__content">
+      <h1 class="container__title">Formulario de inscripción</h1>
+      <subscription-form />
+    </div>
   </div>
 </template>
 
