@@ -86,7 +86,7 @@ export default {
   z-index: 3;
   width: 100%;
   display: flex;
-  transition: 0.4;
+  transition: 0.4s;
   position: fixed;
   background: #fff;
   align-items: center;

@@ -1,0 +1,72 @@
+.stepper-box {
+  margin: 2rem 0;
+  box-shadow: none !important;
+
+  .content {
+    margin: 20px auto !important;
+    max-width: 768px;
+
+    .row {
+      margin: 20px 0;
+      gap: 0 10px;
+      display: flex !important;
+
+      &-title {
+        font-weight: bold;
+      }
+
+      .col {
+        width: 100%;
+        display: flex;
+
+        .label {
+          padding: 0 0 5px;
+          display: inline-block;
+        }
+
+        .text-field {
+          outline: none;
+          padding: 13px 8px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+
+          &.highlight {
+            background: #eee;
+          }
+        }
+
+        &.flex {
+          display: flex;
+        }
+
+        .text-radio {
+          margin: 10px 0;
+          display: block;
+        }
+
+        .text-date {
+          @extend .text-field;
+          width: 100%;
+          font-family: "Roboto", sans-serif;
+        }
+
+        .text-select {
+          @extend .text-field;
+
+          &.item {
+            &:last-child {
+              background: #eee;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    margin: auto;
+    padding: 0 !important;
+    border: none !important;
+    max-width: 768px !important;
+  }
+}

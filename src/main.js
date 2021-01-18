@@ -7,9 +7,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import VueCarousel from "vue-carousel";
 import VueMq from "vue-mq";
-import titleMixin from '@/mixins/titleMixin'
+import titleMixin from "@/mixins/titleMixin";
+import VueCompositionAPI from "@vue/composition-api";
 
-Vue.mixin(titleMixin)
+Vue.use(VueCompositionAPI);
+Vue.mixin(titleMixin);
 
 Vue.use(VueMq, {
   breakpoints: {
