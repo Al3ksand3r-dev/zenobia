@@ -1,16 +1,17 @@
 <template>
   <div class="container">
     <div class="container__content">
-      <h1 class="container__title">Formulario de inscripción</h1>
+      <main-heading heading="Formulario de inscripción" class="px-0" />
       <subscription-form />
     </div>
   </div>
 </template>
 
 <script>
+import MainHeading from "../components/MainHeading/MainHeading.vue";
 import SubscriptionForm from "../components/SubscriptionForm/SubscriptionForm.vue";
 export default {
-  components: { SubscriptionForm },
+  components: { SubscriptionForm, MainHeading },
   name: "Subscription",
   title() {
     return "Inscripciones";

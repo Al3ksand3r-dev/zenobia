@@ -30,15 +30,15 @@ export default {
         completed: false,
       },
       {
-        icon: "person",
+        icon: "info",
         name: "second",
         title: "Informacíon",
-        subtitle: "",
+        subtitle: "Comente por qué decide tomar el curso",
         component: SecondStep,
         completed: false,
       },
       {
-        icon: "person",
+        icon: "forum",
         name: "third",
         title: "Informacíon",
         subtitle: "Comente por qué medio se enteró del proyecto",

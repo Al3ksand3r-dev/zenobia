@@ -15,6 +15,14 @@
       <li>
         <router-link to="/" @click.native="close">Donaciones</router-link>
       </li>
+      <li>
+        <router-link
+          @click.native="close"
+          exact-active-class="exact-active"
+          :to="{ name: 'Subscription' }"
+          >Inscripciones</router-link
+        >
+      </li>
     </ul>
   </div>
 </template>
