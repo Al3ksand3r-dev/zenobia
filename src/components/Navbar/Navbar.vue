@@ -1,5 +1,9 @@
 <template>
-  <div class="navbar" @scroll="handleScroll" :class="{ 'on-scroll': !onScroll }">
+  <div
+    class="navbar"
+    @scroll="handleScroll"
+    :class="{ 'on-scroll': !onScroll }"
+  >
     <router-link to="/">
       <img :src="require('@/assets/img/logo-transparent.png')" alt="logo" />
     </router-link>
@@ -12,16 +16,24 @@
     <div class="nav-links-desktop">
       <ul class="menu-links">
         <li>
-          <router-link to="/" exact-active-class="exact-active">Inicio</router-link>
+          <router-link to="/" exact-active-class="exact-active"
+            >Inicio</router-link
+          >
         </li>
         <li>
-          <router-link exact-active-class="exact-active" to="/quienes-somos">¿Quiénes somos?</router-link>
+          <router-link exact-active-class="exact-active" to="/quienes-somos"
+            >¿Quiénes somos?</router-link
+          >
         </li>
         <li>
-          <router-link exact-active-class="exact-active" to="/asda">¿Qué hacemos?</router-link>
+          <router-link exact-active-class="exact-active" to="/asda"
+            >¿Qué hacemos?</router-link
+          >
         </li>
         <li>
-          <router-link exact-active-class="exact-active" to="/adasdad">¿Qué logramos?</router-link>
+          <router-link exact-active-class="exact-active" to="/adasdad"
+            >¿Qué logramos?</router-link
+          >
         </li>
         <li>
           <router-link to="/">Actividades</router-link>
@@ -31,6 +43,13 @@
         </li>
         <li>
           <router-link to="/">Galeria</router-link>
+        </li>
+        <li>
+          <router-link
+            exact-active-class="exact-active"
+            :to="{ name: 'Subscription' }"
+            >Inscripciones</router-link
+          >
         </li>
       </ul>
     </div>
@@ -42,20 +61,20 @@ import { mapState, mapActions } from "vuex";
 export default {
   name: "Navbar",
   computed: {
-    ...mapState(["show", "onScroll", "lastScrollPosition"])
+    ...mapState(["show", "onScroll", "lastScrollPosition"]),
   },
   methods: {
     ...mapActions({
       toggleMenuBar: "toggleMenuBar",
-      handleScroll: "handleScroll"
-    })
+      handleScroll: "handleScroll",
+    }),
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
-  }
+  },
 };
 </script>
 
