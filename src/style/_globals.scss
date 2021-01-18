@@ -1,0 +1,59 @@
+.primary-btn {
+    width: 200px;
+    border: none;
+    outline: none;
+    color: #fff;
+    display: block;
+    margin: 2rem 0;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 40px;
+    text-decoration: none;
+    background: #289ea8;
+
+    &:hover {
+        box-shadow: 0 0 10px rgba(#000, .1);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4f4f8;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 1024px) {
+    .primary-btn {
+        margin: 2rem 0;
+
+        &::after {
+            opacity: 0;
+            content: "\f054";
+            font-weight: 900;
+            visibility: hidden;
+            transition: 0.3s all;
+            font-family: "Font Awesome 5 Free";
+        }
+
+        &:hover {
+            &::after {
+                opacity: 1;
+                content: "\f054";
+                font-weight: 900;
+                margin-left: 1rem;
+                visibility: visible;
+                font-family: "Font Awesome 5 Free";
+            }
+        }
+    }
+}
