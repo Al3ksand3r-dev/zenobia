@@ -106,7 +106,8 @@
           id="Etnicity"
           class="text-select"
           v-model="form.etnicity"
-          v-if="form.etnicity !== 'Otras'"
+          :disabled="form.otherEtnicity !== ''"
+          :style="form.otherEtnicity !== '' && { background: '#ccc' }"
         >
           <option
             class="text-select item"
@@ -117,16 +118,17 @@
             {{ etnicity }}
           </option>
         </select>
-        <div class="col" v-else>
-          <label for="Other" class="label">
-            <input
-              type="text"
-              id="Other"
-              class="text-field highlight"
-              v-model="form.other"
-            />
-          </label>
-        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col direction-col" v-if="form.etnicity === 'Otras'">
+        <label for="Other" class="label">Otras</label>
+        <input
+          type="text"
+          id="Other"
+          class="text-field highlight"
+          v-model="form.otherEtnicity"
+        />
       </div>
     </div>
   </div>
@@ -151,7 +153,7 @@ export default {
         citizenship: "",
         etnicity: "",
         course: "",
-        other: "",
+        otherEtnicity: "",
       },
       etnicities: ["Indígena", "Raizal", "Mestizo", "Negro", "Otras"],
       courses: [
@@ -187,9 +189,6 @@ export default {
         required,
       },
       citizenship: {
-        required,
-      },
-      etnicity: {
         required,
       },
     },

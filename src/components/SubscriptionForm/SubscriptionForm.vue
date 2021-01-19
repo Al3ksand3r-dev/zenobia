@@ -16,6 +16,7 @@ import FirstStep from "./Steps/FirstStep.vue";
 import SecondStep from "./Steps/SecondStep.vue";
 import ThirdStep from "./Steps/ThirdStep.vue";
 import { ref } from "@vue/composition-api";
+import axios from "axios";
 export default {
   components: { HorizontalStepper },
   name: "SuscriptionForm",
@@ -72,6 +73,7 @@ export default {
       const formValues = formWizard.value.$children.map((child) => child.form);
       input.value = Object.assign(...formValues);
       console.log(input.value);
+      axios.post("/api/email", input.value);
     };
 
     return {

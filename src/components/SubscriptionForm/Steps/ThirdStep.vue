@@ -1,33 +1,48 @@
 <template>
-  <div class="row">
-    <div class="col direction-col">
-      <label for="SocialMedia" class="label"
-        >Comente por qué medio se enteró del proyecto</label
-      >
-      <select
-        id="SocialMedia"
-        class="text-select"
-        v-model="form.socialMedia"
-        v-if="form.socialMedia !== 'Otro'"
-      >
-        <option
-          class="text-select item"
-          v-for="(socialMedia, idx) in socialMediaList"
-          :key="idx"
-          :value="socialMedia"
+  <div>
+    <div class="row">
+      <div class="col direction-col">
+        <label for="SocialMedia" class="label"
+          >Comente por qué medio se enteró del proyecto</label
         >
-          {{ socialMedia }}
-        </option>
-      </select>
-      <div class="col" v-else>
-        <label for="Other" class="label">
-          <input
-            type="text"
-            id="Other"
-            class="text-field highlight"
-            v-model="form.other"
-          />
-        </label>
+        <select
+          id="SocialMedia"
+          class="text-select"
+          v-model="form.socialMedia"
+          :disabled="form.otherSocialMedia !== ''"
+          :style="form.otherSocialMedia !== '' && { background: '#ccc' }"
+        >
+          <option
+            class="text-select item"
+            v-for="(socialMedia, idx) in socialMediaList"
+            :key="idx"
+            :value="socialMedia"
+          >
+            {{ socialMedia }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="row" v-if="form.socialMedia === 'Otro'">
+      <div class="col direction-col">
+        <label for="Other" class="label">Otro</label>
+        <input
+          type="text"
+          id="Other"
+          class="text-field highlight"
+          v-model="form.otherSocialMedia"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col direction-col">
+        <label for="Email" class="label">Correo Electronico</label
+        ><input
+          type="text"
+          class="text-field"
+          v-model="form.email"
+          id="Email"
+        />
       </div>
     </div>
   </div>
@@ -35,7 +50,7 @@
 
 <script>
 import { validationMixin } from "vuelidate";
-import { required } from "vuelidate/lib/validators";
+import { email } from "vuelidate/lib/validators";
 export default {
   name: "ThirdStep",
   props: ["clickedNext", "currentStep"],
@@ -43,7 +58,8 @@ export default {
   data() {
     return {
       form: {
-        other: "",
+        otherSocialMedia: "",
+        email: "",
         socialMedia: "",
       },
       socialMediaList: [
@@ -61,8 +77,8 @@ export default {
   },
   validations: {
     form: {
-      socialMedia: {
-        required,
+      email: {
+        email,
       },
     },
   },
