@@ -1,7 +1,10 @@
 <template>
   <div class="container">
     <div class="container__content">
-      <main-heading heading="Formulario de inscripción" class="px-0" />
+      <main-heading
+        heading="Formulario de inscripción"
+        class="px-0 text-center"
+      />
       <subscription-form />
     </div>
   </div>

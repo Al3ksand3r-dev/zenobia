@@ -86,3 +86,12 @@
 .uppercase {
   text-transform: uppercase;
 }
+
+.text-center {
+  text-align: center;
+
+  &::after {
+    margin: auto;
+    text-align: center;
+  }
+}
